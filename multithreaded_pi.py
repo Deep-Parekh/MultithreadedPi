@@ -43,7 +43,9 @@ for i in range(0,numThreads):
     t.start()
 
 for i in range(0,len(threads)):
-    threads[i].join()
+    t = threads[i]
+    t.join()
+    
 pi = 4.0 * (float(totalCirclePoints)/POINTS)
 totalTime = time.time() - startTime
 
