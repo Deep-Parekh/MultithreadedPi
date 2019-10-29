@@ -35,6 +35,7 @@ startTime = time.time()
 for i in range(0,numThreads):
     if i == (numThreads-1):
         t = threading.Thread(target=calculate_points, args=(start,POINTS,))
+        threads.append(t)
     else:
         end = int(start + POINTS/numThreads)
         t = threading.Thread(target=calculate_points, args=(start,end,))
